@@ -1,2 +1,12 @@
-<h1>Accounts#new</h1>
-<p>Find me in app/views/accounts/new.html.erb</p>
+<h1>Add Account</h1>
+<%= form_with(model: @account, local: true) do |f| %>
+    <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name, required: true, placeholder: "Name" %>
+    </div>
+    <div class="field">
+        <%= f.label :balance %>
+        <%= f.number_field :balance, min: 0 %>
+    </div>
+    <%= f.submit %>
+<% end %>
